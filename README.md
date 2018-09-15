@@ -1,6 +1,9 @@
 # vicgalle.github.io
 My personal webpage
 
+The theme is based on [Hyde](http://hyde.getpoole.com) by [Mark Otto](https://github.com/mdo) and licensed under MIT. Its source code and contributors list can be found at <https://github.com/poole/hyde>
+
+
 ## Development
 
 This site is built with [Jekyll](https://github.com/jekyll/jekyll).
