@@ -1,26 +1,23 @@
-# Dependencies
-markdown:         kramdown
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
-# Permalinks
-permalink:        pretty
-
-plugins: [jekyll-gist, jekyll-paginate]
-
-# Setup
-title:            Hyde
-tagline:          'A Jekyll theme'
-description:      'A brazen two-column <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that pairs a prominent sidebar with uncomplicated content. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.'
-url:              http://hyde.getpoole.com
-baseurl:          /
-
-author:
-  name:           'Mark Otto'
-  url:            https://twitter.com/mdo
-
-paginate:         5
-
-# Custom vars
-version:          2.1.0
-
+# Site settings - Accessible via {{ site.myvariable }}.
+title: "Victor Gallego"
+description: "Mathematics expert with A1 in almost every language"
+url: "https://vicgalle.github.io"
+author: 
+  name: "Victor Adolfo Gallego Alcalá"
+  url: "/"
 github:
-  repo:           https://github.com/poole/hyde
+  repo: "https://github.com/vicgalle/vicgalle.github.io"
+baseurl: /
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+paginate: 5
+
+plugins: 
+  - jekyll-gist
+  - jekyll-paginate
+
