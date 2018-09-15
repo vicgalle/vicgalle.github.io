@@ -4,7 +4,8 @@ highlighter:      pygments
 
 # Permalinks
 permalink:        pretty
-relative_permalinks: true
+
+plugins: [jekyll-gist, jekyll-paginate]
 
 # Setup
 title:            Hyde
