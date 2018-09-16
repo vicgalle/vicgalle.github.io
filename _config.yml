@@ -3,7 +3,7 @@
 
 # Site settings - Accessible via {{ site.myvariable }}.
 title: "Victor Gallego"
-description: "Mathematics expert with A1 in almost every language"
+description: "Research"
 url: "https://vicgalle.github.io"
 author: 
   name: "Victor Adolfo Gallego Alcalá"
