@@ -2,11 +2,11 @@
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings - Accessible via {{ site.myvariable }}.
-title: "Victor Gallego"
-description: "Research"
+title: "Víctor Gallego"
+description: "Researcher in AI & Stats"
 url: "https://vicgalle.github.io"
 author: 
-  name: "Victor Adolfo Gallego Alcalá"
+  name: "Victor Adolfo Gallego Alcala"
   url: "/"
 github:
   repo: "https://github.com/vicgalle/vicgalle.github.io"
