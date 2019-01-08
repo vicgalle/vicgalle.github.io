@@ -6,7 +6,7 @@ title: "Víctor Gallego"
 description: "Researcher in AI & Stats"
 url: "https://vicgalle.github.io"
 author: 
-  name: "Victor Adolfo Gallego Alcala"
+  name: "Victor Gallego Alcala"
   url: "/"
 github:
   repo: "https://github.com/vicgalle/vicgalle.github.io"
@@ -20,4 +20,5 @@ paginate: 5
 plugins: 
   - jekyll-gist
   - jekyll-paginate
+  - jekyll-seo-tag
 
