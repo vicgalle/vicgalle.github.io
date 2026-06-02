@@ -191,7 +191,8 @@
 
 <section>
     <h2>Research Interests</h2>
-    <p>My recent work centers on making large language models safer and more steerable. I develop methods for <strong>configurable preference tuning</strong> using synthetic data and rubric-guided generation, enabling fine-grained control over LLM behavior. A recurring theme is <strong>test-time adaptation</strong>: rather than relying solely on training, I explore how models can self-correct at inference time&mdash;refining safety specifications on the fly and mitigating reward hacking without retraining. I also investigate <strong>self-critique</strong> and <strong>model merging</strong> as defenses against jailbreak attacks, and more recently, how LLMs can <strong>distill user feedback into persistent memory</strong> to improve over successive interactions.</p>
+    <p>Lately I've been treating LLMs as <strong>optimizers in algorithm space</strong>: instead of updating weights by gradient descent, a frozen model iteratively writes and refines artifacts&mdash;behavioral specifications, programmatic policies, even GPU kernels&mdash;guided by feedback from its own evaluations. The design of that feedback turns out to matter as much as the model: a core question is <strong>feedback engineering</strong>, ranging from a single bit of danger signal to dense social metrics that act as coordination signals between agents. This search loop is powerful but easy to game, so I pair it with lightweight <strong>oversight primitives</strong>&mdash;held-out evaluation gates, decoupled safety channels&mdash;that catch reward hacking and keep the optimization honest. I apply these ideas to <strong>multi-agent cooperation</strong> in sequential social dilemmas, and to <strong>autoresearch</strong>, where an outer-loop agent autonomously redesigns the very pipeline that drives the inner-loop synthesizer.</p>
+    <p style="margin-top: 1rem;">This builds on earlier work on making large language models safer and more steerable. I develop methods for <strong>configurable preference tuning</strong> using synthetic data and rubric-guided generation, enabling fine-grained control over LLM behavior. A recurring theme is <strong>test-time adaptation</strong>: rather than relying solely on training, I explore how models can self-correct at inference time&mdash;refining safety specifications on the fly and mitigating reward hacking without retraining. I also investigate <strong>self-critique</strong> and <strong>model merging</strong> as defenses against jailbreak attacks, and how LLMs can <strong>distill user feedback into persistent memory</strong> to improve over successive interactions.</p>
 </section>
 
 <section>
@@ -199,6 +200,22 @@
 
     <div class="year-group">
         <div class="year-label">2026</div>
+        <div class="pub">
+            <div class="title">Discovering Cooperative Pipelines: Autoresearch for Sequential Social Dilemmas</div>
+            <div class="meta">V Gallego. <span class="venue">AI Agents for Discovery in the Wild (AID-Wild) Workshop @ ACM CAIS 2026</span> · <a href="https://arxiv.org/abs/2605.30003">arXiv</a></div>
+        </div>
+        <div class="pub">
+            <div class="title">Metal-Sci: A Scientific Compute Benchmark for Evolutionary LLM Kernel Search on Apple Silicon</div>
+            <div class="meta">V Gallego. <span class="venue">Preprint, 2026</span> · <a href="https://arxiv.org/abs/2605.09708">arXiv</a></div>
+        </div>
+        <div class="pub">
+            <div class="title">Discovering Agentic Safety Specifications from 1-Bit Danger Signals</div>
+            <div class="meta">V Gallego. <span class="venue">Adaptive and Learning Agents Workshop (ALA 2026) @ AAMAS 2026</span> · <a href="https://arxiv.org/abs/2604.23210">arXiv</a></div>
+        </div>
+        <div class="pub">
+            <div class="title">Beyond Scalar Rewards: Dense Feedback for LLM Policy Synthesis in Sequential Social Dilemmas</div>
+            <div class="meta">V Gallego. <span class="venue">NExT-Game 2026: New Frontiers in Game-Theoretic Learning @ ICML 2026 Workshop</span> · <a href="https://arxiv.org/abs/2603.19453">arXiv</a></div>
+        </div>
         <div class="pub">
             <div class="title">Distilling Feedback into Memory-as-a-Tool</div>
             <div class="meta">V Gallego. <span class="venue">ICLR 2026 Workshop on Memory for LLM-Based Agentic Systems</span> · <a href="https://arxiv.org/abs/2601.05960">arXiv</a></div>
@@ -301,7 +318,7 @@
 </section>
 
 <footer>
-    &copy; 2026 Víctor Gallego &mdash; Last updated March 2026
+    &copy; 2026 Víctor Gallego &mdash; Last updated June 2026
 </footer>
 
 </body>
