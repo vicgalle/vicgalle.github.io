@@ -12,9 +12,14 @@
             box-sizing: border-box;
         }
 
+        html {
+            background: #fff;
+        }
+
         body {
             font-family: 'Courier New', Courier, monospace;
-            background: #fff;
+            background: transparent;
+            overflow-x: hidden;
             color: #000;
             line-height: 1.5;
             padding: 2rem;
@@ -160,9 +165,35 @@
                 font-size: 1.8rem;
             }
         }
+
+        /* Decorative "refiner" blueprint — fixed right-side watermark with scroll parallax */
+        .bg-refiner {
+            position: fixed;
+            top: 50%;
+            right: -30px;
+            transform: translateY(-50%);
+            width: min(360px, 32vw);
+            z-index: -1;
+            opacity: 0.4;
+            pointer-events: none;
+            user-select: none;
+            will-change: transform;
+        }
+
+        .bg-refiner img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 992px) {
+            .bg-refiner { display: none; }
+        }
     </style>
 </head>
 <body>
+
+<div class="bg-refiner" aria-hidden="true"><img src="static/refiner_cmy.png" alt=""></div>
 
 <header>
     <h1>Víctor Gallego</h1>
@@ -320,6 +351,26 @@
 <footer>
     &copy; 2026 Víctor Gallego &mdash; Last updated June 2026
 </footer>
+
+<script>
+    // Gentle scroll parallax for the refiner watermark (disabled on small screens / reduced-motion)
+    (function () {
+        var el = document.querySelector('.bg-refiner');
+        if (!el) return;
+        if (window.matchMedia('(max-width: 992px)').matches) return;
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        var ticking = false;
+        function update() {
+            var offset = -window.scrollY * 0.10;
+            el.style.transform = 'translateY(calc(-50% + ' + offset.toFixed(1) + 'px))';
+            ticking = false;
+        }
+        window.addEventListener('scroll', function () {
+            if (!ticking) { window.requestAnimationFrame(update); ticking = true; }
+        }, { passive: true });
+        update();
+    })();
+</script>
 
 </body>
 </html>
