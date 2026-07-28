@@ -6,189 +6,139 @@
     <title>Víctor Gallego</title>
     <meta name="description" content="Víctor Gallego — Co-founder at Komorebi AI, Adjunct Professor at IE University, PhD in Statistics & Operations Research.">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        /* ══ BRUTALIST ══ hard edges, ink rules, offset shadows, no apologies ══ */
+        :root{
+            --bg:#e9e6dd; --paper:#f7f5ef; --panel:#ffffff; --panel-2:#f2efe6;
+            --ink:#0d0d0d; --ink-2:#3d3a35; --ink-3:#6f6a61;
+            --rule:#0d0d0d; --shade:#0d0d0d; --block:#0d0d0d; --block-ink:#e9e6dd;
+            --mast-bg:#ff4b12; --mast-ink:#0d0d0d; --mast-rule:#0d0d0d;
+            --accent:#ff4b12; --accent-soft:#ffe3d8; --on-accent:#0d0d0d;
+            --grid:.06; --mark:.35;
+            --hard:4px 4px 0 var(--shade);
+            --hard-sm:3px 3px 0 var(--shade);
+            --hard-lg:7px 7px 0 var(--shade);
+            --bw:2px;
         }
-
-        html {
-            background: #fff;
-        }
-
-        body {
-            font-family: 'Courier New', Courier, monospace;
-            background: transparent;
-            overflow-x: hidden;
-            color: #000;
-            line-height: 1.5;
-            padding: 2rem;
-            max-width: 780px;
-            margin: 0 auto;
-        }
-
-        a {
-            color: #000;
-            text-decoration: underline;
-            text-decoration-color: #0ff;
-            text-underline-offset: 2px;
-        }
-
-        a:hover {
-            background: #0ff;
-            color: #000;
-        }
-
-        header {
-            border-bottom: 3px solid #f0f;
-            padding-bottom: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        h1 {
-            font-size: 2.4rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: -1px;
-            line-height: 1.1;
-        }
-
-        h1::selection {
-            background: #0ff;
-        }
-
-        .tagline {
-            margin-top: 0.5rem;
-            font-size: 0.95rem;
-        }
-
-        .links {
-            margin-top: 1rem;
-            font-size: 0.85rem;
-        }
-
-        .links a {
-            margin-right: 1.2rem;
-            text-decoration-color: #f0f;
-        }
-
-        section {
-            margin-bottom: 2.5rem;
-        }
-
-        h2 {
-            font-size: 1rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            border-bottom: 2px solid #f0f;
-            padding-bottom: 0.3rem;
-            margin-bottom: 1rem;
-        }
-
-        p, li {
-            font-size: 0.9rem;
-        }
-
-        .pub {
-            margin-bottom: 0.8rem;
-            padding-left: 1rem;
-            border-left: 3px solid #0ff;
-        }
-
-        .pub .title {
-            font-weight: 700;
-        }
-
-        .pub .meta {
-            font-size: 0.8rem;
-            color: #444;
-        }
-
-        .pub .venue {
-            font-style: italic;
-        }
-
-        .year-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .year-label {
-            font-weight: 900;
-            font-size: 1.4rem;
-            margin-bottom: 0.5rem;
-            display: inline-block;
-            background: #000;
-            color: #ff0;
-            padding: 0.1rem 0.5rem;
-        }
-
-        section p strong {
-            border-bottom: 2px solid #ff0;
-        }
-
-        .pub .meta a {
-            text-decoration-color: #ff0;
-        }
-
-        .pub .meta a:hover {
-            background: #ff0;
-            color: #000;
-        }
-
-        .role {
-            margin-bottom: 1rem;
-        }
-
-        .role .where {
-            font-weight: 700;
-        }
-
-        footer {
-            border-top: 3px solid #f0f;
-            padding-top: 1rem;
-            margin-top: 2rem;
-            font-size: 0.75rem;
-            color: #666;
-        }
-
-        ::selection {
-            background: #0ff;
-            color: #000;
-        }
-
-        @media (max-width: 600px) {
-            body {
-                padding: 1rem;
+        @media (prefers-color-scheme:dark){
+            :root{
+                --bg:#141311; --paper:#1a1917; --panel:#1f1e1b; --panel-2:#272520;
+                --ink:#e6e1d6; --ink-2:#aaa49a; --ink-3:#7d776d;
+                --rule:#565049; --shade:#000000; --block:#332f2a; --block-ink:#efe9dd;
+                --mast-bg:#1c1a17; --mast-ink:#e6e1d6; --mast-rule:#d9552a;
+                --accent:#e0602f; --accent-soft:#2a1a12; --on-accent:#100e0c;
+                --grid:.12; --mark:.22;
             }
-            h1 {
-                font-size: 1.8rem;
-            }
+        }
+
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{background:var(--bg);color-scheme:light dark}
+        body{
+            font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Courier New",monospace;
+            background:transparent;color:var(--ink);line-height:1.55;overflow-x:hidden;
+            padding:2.2rem 1.6rem 3rem;max-width:860px;margin:0 auto;font-size:14.5px;
+            -webkit-font-smoothing:antialiased;
+        }
+        /* blueprint grid */
+        body::before{
+            content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;opacity:var(--grid);
+            background-image:linear-gradient(var(--rule) 1px,transparent 1px),
+                             linear-gradient(90deg,var(--rule) 1px,transparent 1px);
+            background-size:56px 56px;background-position:-1px -1px;
+        }
+
+        a{color:inherit;text-decoration:underline;text-decoration-thickness:2px;
+          text-decoration-color:var(--accent);text-underline-offset:3px}
+        a:hover{background:var(--accent);color:var(--on-accent);text-decoration-color:transparent}
+
+        /* ── masthead ── */
+        header{
+            border:var(--bw) solid var(--mast-rule);background:var(--mast-bg);color:var(--mast-ink);
+            box-shadow:var(--hard-lg);padding:1.4rem 1.5rem 1.5rem;margin-bottom:2.6rem;
+        }
+        h1{
+            font-family:"Helvetica Neue",Arial,ui-sans-serif,sans-serif;
+            font-size:clamp(2rem,6vw,2.9rem);font-weight:800;text-transform:uppercase;
+            letter-spacing:-.045em;line-height:.95;
+        }
+        .tagline{margin-top:.75rem;font-size:.85rem;line-height:1.65;max-width:62ch}
+        header a{text-decoration-color:currentColor}
+        header a:hover{background:var(--ink);color:var(--bg)}
+        .links{margin-top:1.1rem;display:flex;flex-wrap:wrap;gap:.5rem}
+        .links a{
+            margin:0;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;
+            text-decoration:none;border:var(--bw) solid var(--mast-ink);padding:.4rem .7rem;
+            background:transparent;
+        }
+        .links a:hover{background:var(--mast-ink);color:var(--mast-bg);box-shadow:3px 3px 0 var(--accent)}
+
+        /* ── sections ── */
+        section{margin-bottom:2.8rem}
+        h2{
+            font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.2em;
+            background:var(--block);color:var(--block-ink);display:inline-block;
+            padding:.35rem .7rem;margin-bottom:1.2rem;box-shadow:3px 3px 0 var(--accent);
+        }
+        p,li{font-size:.875rem}
+        /* emphasis is a highlighter band only — the orange underline is reserved for links,
+           so the two never read the same */
+        section p strong{
+            font-weight:800;
+            background:linear-gradient(transparent 62%,color-mix(in srgb,var(--accent) 30%,transparent) 0);
+            padding:0 .1em;
+        }
+
+        /* ── roles / education blocks ── */
+        .role,#education-block{
+            background:var(--panel);border:var(--bw) solid var(--rule);box-shadow:var(--hard);
+            padding:.85rem 1rem;margin-bottom:1rem;font-size:.85rem;
+        }
+        .role .where{font-weight:800;text-transform:uppercase;letter-spacing:.02em;font-size:.83rem}
+
+        /* ── publications ── */
+        .year-group{margin-bottom:1.8rem}
+        .year-label{
+            font-family:"Helvetica Neue",Arial,sans-serif;
+            font-weight:800;font-size:1.15rem;letter-spacing:-.02em;margin-bottom:.75rem;
+            display:inline-block;background:var(--block);color:var(--block-ink);
+            padding:.15rem .6rem;box-shadow:3px 3px 0 var(--accent);
+        }
+        .pub{
+            margin-bottom:.55rem;padding:.6rem .8rem;background:var(--panel);
+            border:1px solid var(--rule);border-left:5px solid var(--accent);
+        }
+        .pub:hover{box-shadow:var(--hard-sm);transform:translate(-2px,-2px);background:var(--accent-soft)}
+        .pub .title{font-weight:700;font-size:.85rem;letter-spacing:-.01em;line-height:1.4}
+        .pub .meta{font-size:.75rem;color:var(--ink-2);margin-top:.25rem}
+        .pub .venue{font-style:normal;text-transform:uppercase;letter-spacing:.05em;font-size:.7rem;color:var(--ink-3)}
+        .pub .meta a{text-decoration-color:var(--accent)}
+
+        footer{
+            border:var(--bw) solid var(--rule);background:var(--paper);box-shadow:var(--hard-sm);
+            padding:.9rem 1rem;margin-top:2.5rem;font-size:.7rem;color:var(--ink-3);
+            text-transform:uppercase;letter-spacing:.12em;text-align:center;
+        }
+
+        ::selection{background:var(--accent);color:var(--on-accent)}
+        h1::selection{background:var(--ink);color:var(--bg)}
+
+        @media (max-width:600px){
+            body{padding:1.1rem 1rem 2rem}
+            header{box-shadow:var(--hard);padding:1.1rem}
+            .role,#education-block{box-shadow:var(--hard-sm)}
         }
 
         /* Decorative "refiner" blueprint — fixed right-side watermark with scroll parallax */
-        .bg-refiner {
-            position: fixed;
-            top: 50%;
-            right: -30px;
-            transform: translateY(-50%);
-            width: min(360px, 32vw);
-            z-index: -1;
-            opacity: 0.4;
-            pointer-events: none;
-            user-select: none;
-            will-change: transform;
+        .bg-refiner{
+            position:fixed;top:50%;right:-30px;transform:translateY(-50%);
+            width:min(360px,32vw);z-index:-1;opacity:var(--mark);
+            pointer-events:none;user-select:none;will-change:transform;
+            mix-blend-mode:multiply;
         }
-
-        .bg-refiner img {
-            display: block;
-            width: 100%;
-            height: auto;
+        @media (prefers-color-scheme:dark){
+            .bg-refiner{mix-blend-mode:screen;filter:saturate(.6)}
         }
-
-        @media (max-width: 992px) {
-            .bg-refiner { display: none; }
-        }
+        .bg-refiner img{display:block;width:100%;height:auto}
+        @media (max-width:992px){ .bg-refiner{display:none} }
     </style>
 </head>
 <body>
@@ -340,12 +290,14 @@
 
 <section>
     <h2>Education</h2>
+    <div id="education-block">
     <p><strong>PhD in Statistics &amp; Operations Research</strong>, Universidad Complutense de Madrid, 2021<br>
     <em>Contributions to Large Scale Bayesian Inference and Adversarial Machine Learning</em><br>
     Supervised by David Ríos Insua (ICMAT, Royal Academy of Sciences) and David Gómez-Ullate (ICMAT, UCA)</p>
     <br>
     <p><strong>MSc in Mathematical Engineering</strong>, UCM</p>
     <p><strong>Double Degree in Mathematics &amp; Computer Science</strong>, UCM</p>
+    </div>
 </section>
 
 <footer>
